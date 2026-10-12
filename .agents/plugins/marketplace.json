@@ -1,0 +1,12 @@
+{
+  "name": "moduo-marketplace",
+  "interface": { "displayName": "Moduo Marketplace" },
+  "plugins": [
+    {
+      "name": "moduo-astro",
+      "source": { "source": "local", "path": "./plugins/astro" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

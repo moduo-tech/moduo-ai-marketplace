@@ -1,0 +1,12 @@
+{
+  "name": "moduo-marketplace",
+  "description": "Skills and agents maintained by Moduo",
+  "owner": { "name": "Moduo" },
+  "plugins": [
+    {
+      "name": "moduo-astro",
+      "source": "./plugins/astro",
+      "description": "Astro UI, design tokens, tests, QA, accessibility, performance, CMS, i18n, and SEO"
+    }
+  ]
+}
