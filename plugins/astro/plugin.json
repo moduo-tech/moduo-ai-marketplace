@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "moduo-astro",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Astro workflows for Moduo: design tokens, UI, content, tests, accessibility, performance, functional QA, SEO, and release reports.",
   "author": { "name": "Moduo", "url": "https://moduo.io" },
   "repository": "https://github.com/moduo-tech/moduo-ai-marketplace"

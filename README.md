@@ -29,7 +29,7 @@ The Astro project rules are a template for target projects. Installing the plugi
 
 ## Versioning and publishing
 
-**Versioning unit:** one plugin per technology. Astro skills evolve together under `moduo-astro`; individual `SKILL.md` files do not have separate version numbers. The catalogs do not have their own semantic version: a Git tag identifies a snapshot of the entire marketplace. Version `0.1.0` is currently a draft, and this repository has no release tags yet.
+**Versioning unit:** one plugin per technology. Astro skills evolve together under `moduo-astro`; individual `SKILL.md` files do not have separate version numbers. The catalogs do not have their own semantic version: a Git tag identifies a snapshot of the entire marketplace. The plugin manifests currently declare `0.2.0`; consult the repository's GitHub Releases and tags for published history.
 
 | Change | Policy before `1.0.0` | Policy after `1.0.0` |
 | --- | --- | --- |
@@ -44,13 +44,13 @@ Git tags can pin **the entire marketplace** to a known state. Claude accepts `mo
 ### Release procedure
 
 1. **Review the scope.** Identify changed skills, agents, and rules. Update both variants of any affected agent and the catalogs if you add a plugin. Record user-visible changes and any required migration.
-2. **Choose the plugin version.** Apply the policy above and set the exact same value in `plugins/astro/plugin.json` and `plugins/astro/.claude-plugin/plugin.json`. The first release may keep `0.1.0`, since it is still an untagged draft. Do not add a version to each skill or to `marketplace.json` entries.
+2. **Choose the plugin version.** Apply the policy above and set the exact same new value in `plugins/astro/plugin.json` and `plugins/astro/.claude-plugin/plugin.json`. Check published tags and releases before selecting it; never reuse a published version. Do not add a version to each skill or to `marketplace.json` entries.
 3. **Validate before publishing.** Check JSON, TOML, YAML frontmatter, relative links, and matching names; run `git diff --check`. With Claude Code installed, run `claude plugin validate ./plugins/astro` and `claude plugin validate .`. Confirm Codex discovers the plugin from the local catalog and that a skill loads in each client. To test a Codex agent, copy its template into a test project's `.codex/agents/`. Note any unavailable client checks in the release notes.
-4. **Create the release commit.** Include both manifests and the release notes in a reviewed commit. Merge and push it to the release branch. Then create an annotated, immutable tag on that same commit and push the tag. For the first release, once the branch is pushed:
+4. **Create the release commit.** Include both manifests and the release notes in a reviewed commit. Merge and push it to the release branch. Then create an annotated, immutable tag on that same commit and push the tag. For example, once the branch is pushed:
 
    ```text
-   git tag -a moduo-astro-v0.1.0 -m "moduo-astro 0.1.0"
-   git push origin moduo-astro-v0.1.0
+   git tag -a moduo-astro-v0.2.0 -m "moduo-astro 0.2.0"
+   git push origin moduo-astro-v0.2.0
    ```
 
 5. **Publish and verify.** Create a GitHub Release from the tag, including changes, migrations, and outstanding checks. Update the marketplace in Claude Code or run `codex plugin marketplace upgrade` to refresh Codex's Git source; install or update `moduo-astro` and verify a skill in a new session. Never reuse a version number or move a published tag. [Claude Code: updates](https://code.claude.com/docs/en/plugins/host-marketplace), [OpenAI Docs: Git sources](https://developers.openai.com/plugins/build/plugins).
